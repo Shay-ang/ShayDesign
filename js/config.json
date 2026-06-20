@@ -7,12 +7,13 @@
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
-      "heroTitleSize": 65,
-      "heroTitleWeight": 300,
-      "heroPaddingTop": 68,
+      "heroTitleSize": 46,
+      "heroTitleWeight": 200,
+      "heroPaddingTop": 44,
       "heroPaddingBottom": 64,
-      "heroSubtitleSize": 16,
-      "projectTitleSize": 45
+      "heroSubtitleSize": 12,
+      "projectTitleSize": 45,
+      "heroTitleColor": "#fcfcfc"
     }
   },
   "clients": [
@@ -159,7 +160,7 @@
     },
     {
       "id": "moshe",
-      "name": "Moshe!",
+      "name": "AVIVI",
       "category": "",
       "tileSize": "large",
       "grid": {
