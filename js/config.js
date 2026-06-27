@@ -34,7 +34,7 @@ const CONFIG = {
     tagline: "Graphic & Video Design · Ads & Social Media",
     email:   "me@shay.design",          // e.g. "shay@example.com"
     social: {
-      instagram: "https://lenka.co.il",      // full URL, e.g. "https://instagram.com/shaydesign"
+      instagram: "https://www.instagram.com/shay_oh/",      // full URL, e.g. "https://instagram.com/shaydesign"
       linkedin:  "https://lenka.co.il",      // full URL
       behance:   "https://lenka.co.il",      // full URL
     },
