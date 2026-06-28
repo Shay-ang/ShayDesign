@@ -153,25 +153,18 @@
 
     var tiles = CONFIG.clients.map(function (client) {
       var logo     = clientLogoPath(client);
-      var logoDark = client.logoDark || null;
       var size     = client.tileSize || 'featured';
       var count    = client.assets.length;
       var countTxt = count + (count === 1 ? ' piece' : ' pieces');
       var logoH    = client.logoSize || 120;
-      var imgStyle = ' style="max-height:' + logoH + 'px"';
       var imgErr   = ' onerror="this.style.display=\'none\'"';
-      var logoHtml = '';
-      if (logo && logoDark) {
-        logoHtml =
-          '<img src="' + escAttr(logo) + '" alt="' + escAttr(client.name) + '" class="logo-light" loading="lazy"' + imgStyle + imgErr + '>' +
-          '<img src="' + escAttr(logoDark) + '" alt="' + escAttr(client.name) + '" class="logo-dark" loading="lazy"' + imgStyle + imgErr + '>';
-      } else if (logo) {
-        logoHtml = '<img src="' + escAttr(logo) + '" alt="' + escAttr(client.name) + '" loading="lazy"' + imgStyle + imgErr + '>';
-      }
+      var logoHtml = logo
+        ? '<img src="' + escAttr(logo) + '" alt="' + escAttr(client.name) + '" loading="lazy"' + imgErr + '>'
+        : '';
 
       return (
         '<a href="#client/' + escAttr(client.id) + '" class="bento-item client-tile" data-size="' + size + '">' +
-          logoHtml +
+          '<div class="tile-logo-wrap" style="max-height:' + logoH + 'px">' + logoHtml + '</div>' +
           '<div class="tile-info">' +
             '<span class="tile-name">' + esc(client.name) + '</span>' +
             '<span class="tile-count">' + esc(countTxt) + '</span>' +
@@ -399,35 +392,6 @@
     }
   });
 
-  // ── Theme toggle (live site only) ─────────────────────────────────────────
-  function themeIcon() {
-    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    return dark
-      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/></svg>'
-      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-  }
-
-  function initThemeToggle() {
-    var btn = document.createElement('button');
-    btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label', 'Toggle dark mode');
-    btn.innerHTML = themeIcon();
-    document.querySelector('.nav-inner').appendChild(btn);
-    btn.addEventListener('click', function () {
-      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      var rect = btn.getBoundingClientRect();
-      document.documentElement.style.setProperty('--vt-x', Math.round(rect.left + rect.width  / 2) + 'px');
-      document.documentElement.style.setProperty('--vt-y', Math.round(rect.top  + rect.height / 2) + 'px');
-      function doSwitch() {
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        btn.innerHTML = themeIcon();
-      }
-      if (document.startViewTransition) document.startViewTransition(doSwitch);
-      else doSwitch();
-    });
-  }
-
   // ── postMessage handler (admin preview) ───────────────────────────────────
   window.addEventListener('message', function (e) {
     if (!e.data) return;
@@ -499,11 +463,6 @@
       return;
     }
 
-    if (msg.type === 'theme-change') {
-      document.documentElement.setAttribute('data-theme', msg.theme);
-      return;
-    }
-
     // Targeted updates — no re-render, no blink ──────────────────────────────
 
     if (msg.type === 'styles-update') {
@@ -539,9 +498,8 @@
       var tiles = app ? app.querySelectorAll('.client-tile') : [];
       var logoTile = tiles[msg.clientIndex];
       if (logoTile) {
-        logoTile.querySelectorAll(':scope > img').forEach(function (img) {
-          img.style.maxHeight = msg.size + 'px';
-        });
+        var wrap = logoTile.querySelector('.tile-logo-wrap');
+        if (wrap) wrap.style.maxHeight = msg.size + 'px';
       }
       return;
     }
@@ -580,7 +538,6 @@
     app = document.getElementById('app');
 
     if (!IS_PREVIEW) {
-      initThemeToggle();
       initLightbox();
       window.addEventListener('hashchange', route);
     }
