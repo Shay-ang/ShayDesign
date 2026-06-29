@@ -247,6 +247,74 @@
     return first.substring(0, first.lastIndexOf('/')) + '/logo.png';
   }
 
+  // ── Nav: desktop pin-on-scroll + logo show/hide ──────────────────────────
+  var _navScrollHandler = null; // home-page logo visibility
+  var _navPinHandler    = null; // desktop pin (all pages)
+  var _navPlaceholder   = null; // layout placeholder when nav is fixed
+
+  function setNavLogoVisible(visible) {
+    var el = document.getElementById('nav-logo');
+    if (el) el.classList.toggle('nav-scroll-hidden', !visible);
+  }
+
+  function setNavPinned(navEl, pin) {
+    var pinned = navEl.classList.contains('nav-pinned');
+    if (pin === pinned) return;
+    if (pin) {
+      if (!_navPlaceholder) {
+        _navPlaceholder = document.createElement('div');
+        _navPlaceholder.id = 'nav-ph';
+        _navPlaceholder.style.height = navEl.offsetHeight + 'px';
+        navEl.parentNode.insertBefore(_navPlaceholder, navEl.nextSibling);
+      }
+      navEl.classList.add('nav-pinned');
+    } else {
+      navEl.classList.remove('nav-pinned');
+      if (_navPlaceholder && _navPlaceholder.parentNode) {
+        _navPlaceholder.parentNode.removeChild(_navPlaceholder);
+      }
+      _navPlaceholder = null;
+    }
+  }
+
+  // Threshold: nav height on desktop, 1px on mobile/tablet
+  function navThreshold() {
+    var navEl = document.querySelector('.nav');
+    return window.innerWidth > 1024 ? (navEl ? navEl.offsetHeight : 56) : 1;
+  }
+
+  // Initialise desktop pin listener once at startup
+  function initNavPin() {
+    if (IS_PREVIEW || _navPinHandler) return;
+    var navEl = document.querySelector('.nav');
+    if (!navEl) return;
+    _navPinHandler = function () {
+      if (window.innerWidth <= 1024) { setNavPinned(navEl, false); return; }
+      setNavPinned(navEl, window.scrollY >= navEl.offsetHeight);
+    };
+    window.addEventListener('scroll', _navPinHandler, { passive: true });
+    _navPinHandler();
+  }
+
+  // Home page: hide logo at top, show when scrolled / pinned
+  function enableHomeScroll() {
+    setNavLogoVisible(window.scrollY >= navThreshold());
+    if (_navScrollHandler) return;
+    _navScrollHandler = function () {
+      setNavLogoVisible(window.scrollY >= navThreshold());
+    };
+    window.addEventListener('scroll', _navScrollHandler, { passive: true });
+  }
+
+  // Project pages: always show logo, stop home logo handler
+  function disableHomeScroll() {
+    if (_navScrollHandler) {
+      window.removeEventListener('scroll', _navScrollHandler);
+      _navScrollHandler = null;
+    }
+    setNavLogoVisible(true);
+  }
+
   // ── HOME PAGE ─────────────────────────────────────────────────────────────
   function renderHome() {
     setBreadcrumb('');
@@ -268,9 +336,19 @@
       );
     }).join('');
 
+    var heroIdent;
+    if (CONFIG.designer.logo) {
+      heroIdent = '<div class="hero-identity">' +
+        '<img class="hero-logo" src="' + escAttr(CONFIG.designer.logo) + '" alt="' + escAttr(CONFIG.designer.name) + '">' +
+        '<h1>' + esc(CONFIG.designer.name) + '</h1>' +
+      '</div>';
+    } else {
+      heroIdent = '<h1>' + esc(CONFIG.designer.name) + '</h1>';
+    }
+
     app.innerHTML = (
       '<header class="hero page-enter">' +
-        '<h1>' + esc(CONFIG.designer.name) + '</h1>' +
+        heroIdent +
         '<p>'  + esc(CONFIG.designer.tagline || '') + '</p>' +
       '</header>' +
       '<section class="page-section">' +
@@ -279,6 +357,8 @@
         '</div>' +
       '</section>'
     );
+
+    if (!IS_PREVIEW) enableHomeScroll();
 
     if (IS_PREVIEW) {
       // Intercept tile clicks — notify parent instead of navigating
@@ -295,6 +375,7 @@
   function renderClient(clientId) {
     var client = CONFIG.clients.find(function (c) { return c.id === clientId; });
     if (!client) { renderHome(); return; }
+    if (!IS_PREVIEW) disableHomeScroll();
 
     setBreadcrumb(client.name);
     lbAssets = client.assets;
@@ -430,6 +511,10 @@
 
   // ── Route helper (without scroll) ─────────────────────────────────────────
   function renderByRoute(r) {
+    if (!IS_PREVIEW) {
+      var navEl = document.querySelector('.nav');
+      if (navEl) setNavPinned(navEl, false);
+    }
     if (r.startsWith('client/')) renderClient(r.slice(7));
     else renderHome();
   }
@@ -684,6 +769,7 @@
 
     if (!IS_PREVIEW) {
       initLightbox();
+      initNavPin();
       window.addEventListener('hashchange', route);
     }
 
