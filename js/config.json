@@ -7,11 +7,11 @@
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
-      "heroLogoSize": 324,
-      "heroTitleSize": 59,
+      "heroLogoSize": 200,
+      "heroTitleSize": 50,
       "heroTitleWeight": 300,
-      "heroPaddingTop": 32,
-      "heroPaddingBottom": 68,
+      "heroPaddingTop": 40,
+      "heroPaddingBottom": 30,
       "heroSubtitleSize": 17,
       "projectTitleSize": 80,
       "projectTitleWeight": 300,
@@ -22,7 +22,7 @@
       "homeTileRadius": 48,
       "homeTileShadow": 0,
       "homeTileBg": "#fafafa",
-      "navLogoGap": 0,
+      "navLogoGap": 5,
       "navTextSize": 10,
       "navTextColor": "#010101",
       "navTextWeight": 400,
@@ -35,11 +35,10 @@
       "navHeightTablet": 56
     },
     "meta": {
-      "description": "Graphic & Video Design",
+      "description": "Graphic & Print Design | Video Editing | Motion Design",
       "title": "Shay Design",
       "image": "https://shay.design/Assets/share.png"
     },
-    "heroLogoAsTitle": true,
     "logo": "Assets/logo.png"
   },
   "clients": [
