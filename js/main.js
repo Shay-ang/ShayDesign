@@ -164,6 +164,8 @@
     set('--proj-title-size-mobile', s.projectTitleSizeMobile,  'px');
     set('--proj-title-weight',      s.projectTitleWeight != null ? String(s.projectTitleWeight) : null, '');
     set('--proj-title-color',       s.projectTitleColor, '');
+    // Social icon size
+    set('--social-icon-size', s.socialIconSize, 'px');
     // Nav logo gap + text styling
     set('--nav-logo-gap',    s.navLogoGap,    'px');
     set('--nav-text-size',   s.navTextSize,   'px');
@@ -204,8 +206,6 @@
     } else {
       navLogo.textContent = d.name;
     }
-
-    document.getElementById('footer-name').textContent = d.name;
 
     var links = '';
     Object.keys(d.social || {}).forEach(function (key) {
@@ -597,8 +597,6 @@
         if (navTextSpan) navTextSpan.textContent = msg.name;
         else if (!navLogoEl.querySelector('img')) navLogoEl.textContent = msg.name;
       }
-      var footerNameEl = document.getElementById('footer-name');
-      if (footerNameEl) footerNameEl.textContent = msg.name;
       var heroH1 = app && app.querySelector('.hero h1');
       if (heroH1) heroH1.textContent = msg.name;
       var heroP = app && app.querySelector('.hero p');

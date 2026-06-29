@@ -25,7 +25,9 @@
       "navTextSize": 15,
       "navTextColor": "#010101",
       "navTextWeight": 400,
-      "projectTitleSizeMobile": 30
+      "projectTitleSizeMobile": 35,
+      "projectTitleSizeTablet": 70,
+      "socialIconSize": 25
     },
     "logo": "Assets/logo.png"
   },
@@ -40,9 +42,12 @@
         "gap": 20,
         "width": 80,
         "maxWidth": 0,
-        "paddingTop": 60,
+        "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 0
+        }
       },
       "assets": [
         {
@@ -185,7 +190,7 @@
     {
       "id": "ninja-academy",
       "name": "Ninja Academy",
-      "category": "Social Media Reels & Posts Design Logo Motion Design Google Ads Banners & Website Banners Design",
+      "category": "Social Media Posts & Reels • Logo Design • Motion Design • Google Ads & Website Banner Design",
       "tileSize": "normal",
       "grid": {
         "columns": 2,
