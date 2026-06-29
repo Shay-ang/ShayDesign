@@ -1,19 +1,18 @@
 {
   "designer": {
     "name": "Shay Design",
-    "tagline": "Graphic & Video Design",
-    "heroLogoAsTitle": true,
+    "tagline": "Graphic & Print Design | Video Editing | Motion Design",
     "email": "ohanshay@gmail.com",
     "social": {
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
-      "heroLogoSize": 180,
-      "heroTitleSize": 77,
+      "heroLogoSize": 324,
+      "heroTitleSize": 59,
       "heroTitleWeight": 300,
-      "heroPaddingTop": 60,
+      "heroPaddingTop": 32,
       "heroPaddingBottom": 68,
-      "heroSubtitleSize": 13,
+      "heroSubtitleSize": 17,
       "projectTitleSize": 80,
       "projectTitleWeight": 300,
       "fontFamily": "Heebo",
@@ -40,7 +39,8 @@
       "title": "Shay Design",
       "image": "https://shay.design/Assets/BPM/logo.png"
     },
-    "logo": "Assets/logo.svg"
+    "heroLogoAsTitle": true,
+    "logo": "Assets/logo.png"
   },
   "clients": [
     {
