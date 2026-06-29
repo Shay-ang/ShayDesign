@@ -18,7 +18,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family, 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
@@ -121,10 +121,16 @@ main#app { flex: 1; }
   gap: var(--gap);
 }
 
-/* Home page uses shorter rows so client tiles stay compact */
+/* Home page: 4-column grid with shorter rows */
 .bento-home {
-  grid-auto-rows: 160px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: var(--home-tile-row-h, 160px);
+  gap: var(--home-tile-gap, var(--gap));
 }
+
+/* Home tile size overrides for 4-col grid */
+.bento-home .bento-item[data-size="featured"] { grid-column: span 3; }
+.bento-home .bento-item[data-size="hero"]     { grid-column: span 4; }
 
 /* Size variants — set via  data-size="…"  in config.js */
 /*
@@ -169,18 +175,19 @@ main#app { flex: 1; }
   align-items: center;
   justify-content: center;
   gap: 0;
-  background: #fff;
-  border: 1px solid var(--border);
+  background: var(--home-tile-bg, #fff);
+  border: none;
+  border-radius: var(--home-tile-radius, 0px);
+  box-shadow: var(--home-tile-shadow, none);
   text-decoration: none;
   cursor: pointer;
-  padding: 2rem 2rem 1.5rem;
+  padding: var(--home-tile-padding, 32px);
   overflow: hidden;
   position: relative;
   transition: border-color 0.25s, box-shadow 0.28s, transform 0.28s;
 }
 
 .bento-item.client-tile:hover {
-  border-color: #bbb;
   box-shadow: 0 8px 36px rgba(0,0,0,0.10);
   transform: translateY(-3px);
 }
@@ -193,7 +200,6 @@ main#app { flex: 1; }
   align-items: center;
   justify-content: center;
   width: 100%;
-  overflow: hidden;
 }
 
 .tile-logo-wrap > img {
@@ -307,15 +313,34 @@ main#app { flex: 1; }
 }
 
 /* When the grid has a fixed row height, images fill their cells with cover */
-#asset-grid[style*="align-items:stretch"] .asset-tile {
+#asset-grid[style*="align-items:stretch"] .asset-tile,
+.asset-row[style*="align-items:stretch"] .asset-tile {
   display: flex;
   flex-direction: column;
 }
 #asset-grid[style*="align-items:stretch"] .asset-tile img,
-#asset-grid[style*="align-items:stretch"] .asset-tile video {
+#asset-grid[style*="align-items:stretch"] .asset-tile video,
+.asset-row[style*="align-items:stretch"] .asset-tile img,
+.asset-row[style*="align-items:stretch"] .asset-tile video {
   flex: 1;
   min-height: 0;
   object-fit: cover;
+}
+
+/* Transparent alpha-channel assets — no background, contain fit */
+.asset-tile[data-transparent] {
+  background: transparent;
+}
+.asset-tile[data-transparent] video,
+.asset-tile[data-transparent] img {
+  background: transparent;
+  object-fit: contain;
+}
+#asset-grid[style*="align-items:stretch"] .asset-tile[data-transparent] img,
+#asset-grid[style*="align-items:stretch"] .asset-tile[data-transparent] video,
+.asset-row[style*="align-items:stretch"] .asset-tile[data-transparent] img,
+.asset-row[style*="align-items:stretch"] .asset-tile[data-transparent] video {
+  object-fit: contain;
 }
 
 .asset-tile:hover img,
@@ -562,6 +587,10 @@ html::-webkit-scrollbar-thumb:hover { background: #b4b4b4; }
 
   .client-page-header { min-height: 4rem; }
   .back-btn { top: 0; }
+
+  .client-page-title {
+    font-size: var(--proj-title-size-mobile, var(--proj-title-size, clamp(1.1rem, 5vw, 1.6rem)));
+  }
 
   /* On mobile: hide side arrows, swipe handles navigation */
   .lb-nav { display: none; }

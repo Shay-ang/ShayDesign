@@ -51,6 +51,7 @@
       paddingTop:    g.paddingTop    != null ? g.paddingTop    : 40,
       paddingBottom: g.paddingBottom != null ? g.paddingBottom : 0,
       rowHeight:     g.rowHeight     != null ? g.rowHeight     : 0,
+      columnRatio:   g.columnRatio   != null ? g.columnRatio   : null,
     };
     // In preview mode, use the breakpoint the admin has selected rather than the
     // actual iframe window width (which can be narrower than 1024px even in "Desktop" mode).
@@ -60,10 +61,45 @@
   }
 
   // ── Grid inline style ────────────────────────────────────────────────────
-  function gridStyle(g) {
+  function gridColTemplate(g) {
+    if (g.columns === 2 && g.columnRatio != null) {
+      return g.columnRatio + 'fr ' + (100 - g.columnRatio) + 'fr';
+    }
+    return 'repeat(' + g.columns + ',1fr)';
+  }
+
+  // Style for each .asset-row wrapper (2-col only), ratio may be null for 50/50
+  function rowGridStyle(g, ratio) {
+    var colTemplate = ratio != null ? (ratio + 'fr ' + (100 - ratio) + 'fr') : '1fr 1fr';
     var parts = [
       'display:grid',
-      'grid-template-columns:repeat(' + g.columns + ',1fr)',
+      'grid-template-columns:' + colTemplate,
+      'gap:' + g.gap + 'px',
+    ];
+    if (g.rowHeight) {
+      parts.push('grid-auto-rows:' + g.rowHeight + 'px');
+      parts.push('align-items:stretch');
+    }
+    return parts.join(';');
+  }
+
+  // Outer #asset-grid style — flex-column for 2-col, CSS grid otherwise
+  function gridStyle(g) {
+    if (g.columns === 2) {
+      var parts = [
+        'display:flex', 'flex-direction:column',
+        'gap:' + g.gap + 'px',
+        'width:' + g.width + '%',
+        'padding-top:' + g.paddingTop + 'px',
+        'padding-bottom:' + g.paddingBottom + 'px',
+        'margin:0 auto',
+      ];
+      if (g.maxWidth) parts.push('max-width:' + g.maxWidth + 'px');
+      return parts.join(';');
+    }
+    var parts = [
+      'display:grid',
+      'grid-template-columns:' + gridColTemplate(g),
       'gap:' + g.gap + 'px',
       'width:' + g.width + '%',
       'padding-top:' + g.paddingTop + 'px',
@@ -76,12 +112,44 @@
     return parts.join(';');
   }
 
+  // ── Google Fonts loader ───────────────────────────────────────────────────
+  var FONT_QUERIES = {
+    'DM Sans':            'DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300',
+    'Inter':              'Inter:wght@300;400;500;600;700',
+    'Montserrat':         'Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300',
+    'Space Grotesk':      'Space+Grotesk:wght@300;400;500;600;700',
+    'Plus Jakarta Sans':  'Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300',
+    'Cormorant Garamond': 'Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300',
+    'Playfair Display':   'Playfair+Display:ital,wght@0,400;0,500;0,700;1,400',
+    'Syne':               'Syne:wght@400;500;600;700',
+    'Heebo':              'Heebo:wght@300;400;500;700',
+  };
+
+  function loadGoogleFont(family) {
+    if (!family || family === 'DM Sans') return;
+    var id = 'gfont-' + family.replace(/\s+/g, '-').toLowerCase();
+    if (document.getElementById(id)) return;
+    var q = FONT_QUERIES[family];
+    if (!q) return;
+    var lnk = document.createElement('link');
+    lnk.id = id; lnk.rel = 'stylesheet';
+    lnk.href = 'https://fonts.googleapis.com/css2?family=' + q + '&display=swap';
+    document.head.appendChild(lnk);
+  }
+
   // ── Apply designer styles as CSS custom properties ────────────────────────
   function applyStylesObj(s) {
     var r = document.documentElement;
     function set(prop, val, suffix) {
       if (val != null) r.style.setProperty(prop, val + (suffix || ''));
       else             r.style.removeProperty(prop);
+    }
+    // Font family
+    loadGoogleFont(s.fontFamily);
+    if (s.fontFamily && s.fontFamily !== 'DM Sans') {
+      r.style.setProperty('--font-family', "'" + s.fontFamily + "', sans-serif");
+    } else {
+      r.style.removeProperty('--font-family');
     }
     set('--hero-title-size',     s.heroTitleSize,     'px');
     set('--hero-title-weight',   s.heroTitleWeight != null ? String(s.heroTitleWeight) : null, '');
@@ -90,9 +158,22 @@
     set('--hero-subtitle-color', s.heroSubtitleColor, '');
     set('--hero-pt',             s.heroPaddingTop,    'px');
     set('--hero-pb',             s.heroPaddingBottom, 'px');
-    set('--proj-title-size',     s.projectTitleSize,  'px');
-    set('--proj-title-weight',   s.projectTitleWeight != null ? String(s.projectTitleWeight) : null, '');
-    set('--proj-title-color',    s.projectTitleColor, '');
+    set('--proj-title-size',        s.projectTitleSize,        'px');
+    set('--proj-title-size-mobile', s.projectTitleSizeMobile,  'px');
+    set('--proj-title-weight',      s.projectTitleWeight != null ? String(s.projectTitleWeight) : null, '');
+    set('--proj-title-color',       s.projectTitleColor, '');
+    // Home tile styles
+    set('--home-tile-gap',     s.homeTileGap,       'px');
+    set('--home-tile-row-h',   s.homeTileRowHeight, 'px');
+    set('--home-tile-padding', s.homeTilePadding,   'px');
+    set('--home-tile-radius',  s.homeTileRadius,    'px');
+    set('--home-tile-bg',      s.homeTileBg,        '');
+    if (s.homeTileShadow != null && s.homeTileShadow > 0) {
+      var sh = s.homeTileShadow;
+      r.style.setProperty('--home-tile-shadow', '0 ' + Math.round(sh * 0.4) + 'px ' + sh + 'px rgba(0,0,0,0.10)');
+    } else {
+      r.style.removeProperty('--home-tile-shadow');
+    }
   }
 
   function applyDesignerStyles() {
@@ -151,11 +232,10 @@
   function renderHome() {
     setBreadcrumb('');
 
-    var tiles = CONFIG.clients.map(function (client) {
+    var tiles = CONFIG.clients.map(function (client, i) {
+      if (client.hidden) return '';
       var logo     = clientLogoPath(client);
       var size     = client.tileSize || 'featured';
-      var count    = client.assets.length;
-      var countTxt = count + (count === 1 ? ' piece' : ' pieces');
       var logoH    = client.logoSize || 120;
       var imgErr   = ' onerror="this.style.display=\'none\'"';
       var logoHtml = logo
@@ -163,12 +243,8 @@
         : '';
 
       return (
-        '<a href="#client/' + escAttr(client.id) + '" class="bento-item client-tile" data-size="' + size + '">' +
+        '<a href="#client/' + escAttr(client.id) + '" class="bento-item client-tile" data-size="' + size + '" data-index="' + i + '">' +
           '<div class="tile-logo-wrap" style="max-height:' + logoH + 'px">' + logoHtml + '</div>' +
-          '<div class="tile-info">' +
-            '<span class="tile-name">' + esc(client.name) + '</span>' +
-            '<span class="tile-count">' + esc(countTxt) + '</span>' +
-          '</div>' +
         '</a>'
       );
     }).join('');
@@ -187,10 +263,10 @@
 
     if (IS_PREVIEW) {
       // Intercept tile clicks — notify parent instead of navigating
-      app.querySelectorAll('.client-tile').forEach(function (el, i) {
+      app.querySelectorAll('.client-tile').forEach(function (el) {
         el.addEventListener('click', function (e) {
           e.preventDefault();
-          window.parent.postMessage({ type: 'tile-click', index: i }, '*');
+          window.parent.postMessage({ type: 'tile-click', index: parseInt(el.dataset.index, 10) }, '*');
         });
       });
     }
@@ -206,21 +282,55 @@
 
     var g     = resolveGrid(client.grid);
     var style = gridStyle(g);
+    var items;
 
-    var items = client.assets.map(function (asset, i) {
-      var clampedCols = Math.min(asset.cols || 1, g.columns);
-      var colSpan     = clampedCols > 1 ? 'grid-column:span ' + clampedCols : '';
-      var rowSpan     = asset.rows > 1  ? 'grid-row:span '    + asset.rows  : '';
-      var spanCSS     = [colSpan, rowSpan].filter(Boolean).join(';');
-      var styleAttr   = spanCSS ? ' style="' + spanCSS + '"' : '';
-      var rowsAttr    = asset.rows > 1 ? ' data-rows="' + asset.rows + '"' : '';
-      var draggable   = IS_PREVIEW ? ' draggable="true"' : '';
-      return (
-        '<div class="asset-tile"' + styleAttr + rowsAttr + draggable + ' data-index="' + i + '">' +
-          mediaHTML({ file: asset.file, type: asset.type, name: client.name }, false) +
-        '</div>'
-      );
-    }).join('');
+    if (g.columns === 2) {
+      // Row-wrapper rendering: each pair of assets gets its own grid div with its own ratio
+      var rowsHtml = '';
+      var ai = 0, rowIdx = 0;
+      while (ai < client.assets.length) {
+        var rowAssets = [];
+        var colsUsed = 0;
+        while (ai < client.assets.length) {
+          var span = Math.min(client.assets[ai].cols || 1, 2);
+          if (colsUsed + span > 2) break;
+          rowAssets.push({ asset: client.assets[ai], index: ai, span: span });
+          colsUsed += span;
+          ai++;
+        }
+        if (rowAssets.length === 0) { ai++; continue; }
+        var firstAsset = rowAssets[0].asset;
+        var ratio = firstAsset.rowRatio != null ? firstAsset.rowRatio
+                    : (g.columnRatio != null ? g.columnRatio : null);
+        var tilesHtml = rowAssets.map(function (item) {
+          var colAttr    = item.span > 1 ? ' style="grid-column:span ' + item.span + '"' : '';
+          var draggable  = IS_PREVIEW ? ' draggable="true"' : '';
+          var transpAttr = item.asset.transparent ? ' data-transparent' : '';
+          return '<div class="asset-tile"' + colAttr + transpAttr + draggable + ' data-index="' + item.index + '">' +
+            mediaHTML({ file: item.asset.file, type: item.asset.type, name: client.name }, false) +
+          '</div>';
+        }).join('');
+        rowsHtml += '<div class="asset-row" data-row="' + rowIdx + '" style="' + rowGridStyle(g, ratio) + '">' + tilesHtml + '</div>';
+        rowIdx++;
+      }
+      items = rowsHtml;
+    } else {
+      items = client.assets.map(function (asset, i) {
+        var clampedCols = Math.min(asset.cols || 1, g.columns);
+        var colSpan     = clampedCols > 1 ? 'grid-column:span ' + clampedCols : '';
+        var rowSpan     = asset.rows > 1  ? 'grid-row:span '    + asset.rows  : '';
+        var spanCSS     = [colSpan, rowSpan].filter(Boolean).join(';');
+        var styleAttr   = spanCSS ? ' style="' + spanCSS + '"' : '';
+        var rowsAttr    = asset.rows > 1 ? ' data-rows="' + asset.rows + '"' : '';
+        var draggable   = IS_PREVIEW ? ' draggable="true"' : '';
+        var transpAttr  = asset.transparent ? ' data-transparent' : '';
+        return (
+          '<div class="asset-tile"' + styleAttr + rowsAttr + transpAttr + draggable + ' data-index="' + i + '">' +
+            mediaHTML({ file: asset.file, type: asset.type, name: client.name }, false) +
+          '</div>'
+        );
+      }).join('');
+    }
 
     app.innerHTML = (
       '<section class="page-section client-page">' +
@@ -457,8 +567,8 @@
           selTile.appendChild(strip);
         }
       } else if (msg.page === 'tile' && msg.index >= 0) {
-        var tileEls = document.querySelectorAll('.client-tile');
-        if (tileEls[msg.index]) tileEls[msg.index].classList.add('preview-selected');
+        var selTileEl = document.querySelector('.client-tile[data-index="' + msg.index + '"]');
+        if (selTileEl) selTileEl.classList.add('preview-selected');
       }
       return;
     }
@@ -495,8 +605,7 @@
     }
 
     if (msg.type === 'logo-size-update') {
-      var tiles = app ? app.querySelectorAll('.client-tile') : [];
-      var logoTile = tiles[msg.clientIndex];
+      var logoTile = app ? app.querySelector('.client-tile[data-index="' + msg.clientIndex + '"]') : null;
       if (logoTile) {
         var wrap = logoTile.querySelector('.tile-logo-wrap');
         if (wrap) wrap.style.maxHeight = msg.size + 'px';
@@ -505,8 +614,7 @@
     }
 
     if (msg.type === 'tile-attr-update') {
-      var tiles2 = app ? app.querySelectorAll('.client-tile') : [];
-      var attrTile = tiles2[msg.clientIndex];
+      var attrTile = app ? app.querySelector('.client-tile[data-index="' + msg.clientIndex + '"]') : null;
       if (attrTile) attrTile.dataset.size = msg.tileSize;
       return;
     }
@@ -528,7 +636,23 @@
 
     if (msg.type === 'grid-style-update') {
       var gridEl = document.getElementById('asset-grid');
-      if (gridEl) gridEl.setAttribute('style', msg.style);
+      if (gridEl) {
+        gridEl.setAttribute('style', msg.style);
+        // For 2-col row-wrapper grids, also update each row's gap/rowHeight
+        if (msg.rowStyle) {
+          gridEl.querySelectorAll('.asset-row').forEach(function (row) {
+            var cols = row.style.gridTemplateColumns;
+            row.setAttribute('style', msg.rowStyle);
+            if (cols) row.style.gridTemplateColumns = cols;
+          });
+        }
+      }
+      return;
+    }
+
+    if (msg.type === 'row-ratio-update') {
+      var rowEl = document.querySelector('#asset-grid .asset-row[data-row="' + msg.rowIndex + '"]');
+      if (rowEl) rowEl.style.gridTemplateColumns = msg.ratio + 'fr ' + (100 - msg.ratio) + 'fr';
       return;
     }
   });
