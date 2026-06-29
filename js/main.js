@@ -182,6 +182,8 @@
     // Hero title visibility
     if (s.heroTitleHidden)  r.style.setProperty('--hero-title-display', 'none');
     else                    r.style.removeProperty('--hero-title-display');
+    // Hero logo size (used when logo-as-title is active)
+    set('--hero-logo-h', s.heroLogoSize, 'px');
     // Home grid columns per breakpoint
     set('--home-cols',        s.homeColsDesktop != null ? String(s.homeColsDesktop) : null, '');
     set('--home-cols-tablet', s.homeColsTablet  != null ? String(s.homeColsTablet)  : null, '');
@@ -337,7 +339,9 @@
     }).join('');
 
     var heroIdent;
-    if (CONFIG.designer.logo) {
+    if (CONFIG.designer.heroLogoAsTitle && CONFIG.designer.logo) {
+      heroIdent = '<img class="hero-logo hero-logo--title" src="' + escAttr(CONFIG.designer.logo) + '" alt="' + escAttr(CONFIG.designer.name) + '">';
+    } else if (CONFIG.designer.logo) {
       heroIdent = '<div class="hero-identity">' +
         '<img class="hero-logo" src="' + escAttr(CONFIG.designer.logo) + '" alt="' + escAttr(CONFIG.designer.name) + '">' +
         '<h1>' + esc(CONFIG.designer.name) + '</h1>' +

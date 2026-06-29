@@ -2,11 +2,13 @@
   "designer": {
     "name": "Shay Design",
     "tagline": "Graphic & Video Design",
+    "heroLogoAsTitle": true,
     "email": "ohanshay@gmail.com",
     "social": {
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
+      "heroLogoSize": 180,
       "heroTitleSize": 77,
       "heroTitleWeight": 300,
       "heroPaddingTop": 60,

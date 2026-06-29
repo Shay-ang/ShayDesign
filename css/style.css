@@ -158,6 +158,15 @@ main#app { flex: 1; }
   flex-shrink: 0;
 }
 
+.hero-logo--title {
+  display: block;
+  margin: 0 auto 0.75rem;
+  height: var(--hero-logo-h, 160px);
+  width: auto;
+  max-width: min(90%, 600px);
+  object-fit: contain;
+}
+
 /* ─── Bento Grid ────────────────────────────────────────────── */
 .bento {
   display: grid;
