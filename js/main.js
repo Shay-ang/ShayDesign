@@ -168,6 +168,10 @@
     set('--social-icon-size', s.socialIconSize, 'px');
     // Back button size
     set('--back-btn-size', s.backBtnSize, 'px');
+    // Nav height per breakpoint
+    set('--nav-height',        s.navHeight,        'px');
+    set('--nav-height-tablet', s.navHeightTablet,  'px');
+    set('--nav-height-mobile', s.navHeightMobile,  'px');
     // Nav logo gap + text styling
     set('--nav-logo-gap',    s.navLogoGap,    'px');
     set('--nav-text-size',   s.navTextSize,   'px');
@@ -224,6 +228,8 @@
       links += '<a href="mailto:' + escAttr(d.email) + '" aria-label="email" class="social-link">' + SOCIAL_ICONS.mail + '</a>';
     }
     document.getElementById('footer-social').innerHTML = links;
+    var navSocialEl = document.getElementById('nav-social');
+    if (navSocialEl) navSocialEl.innerHTML = links;
   }
 
   // ── Breadcrumb ────────────────────────────────────────────────────────────

@@ -44,10 +44,18 @@ main#app { flex: 1; }
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
-  height: 56px;
+  height: var(--nav-height, 56px);
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .nav-logo {
@@ -564,6 +572,8 @@ html::-webkit-scrollbar-thumb:hover { background: #b4b4b4; }
 @media (max-width: 1024px) {
   :root { --row-h: 240px; }
 
+  .nav-inner { height: var(--nav-height-tablet, var(--nav-height, 56px)); }
+
   .client-page-title {
     font-size: var(--proj-title-size-tablet, var(--proj-title-size, clamp(1.2rem, 4vw, 1.9rem)));
   }
@@ -585,6 +595,10 @@ html::-webkit-scrollbar-thumb:hover { background: #b4b4b4; }
 
 @media (max-width: 640px) {
   :root { --row-h: 180px; }
+
+  .nav-inner { height: var(--nav-height-mobile, var(--nav-height, 56px)); }
+
+  .nav-social { gap: 10px; }
 
   .container { padding: 0 1rem; }
   .hero { padding: 56px 1.5rem 44px; }
