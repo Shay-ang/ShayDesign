@@ -32,7 +32,9 @@
       "homeColsMobile": 1
     },
     "meta": {
-      "description": "Graphic & Video Design"
+      "description": "Graphic & Video Design",
+      "title": "Shay Design",
+      "image": "https://shay.design/Assets/BPM/logo.png"
     },
     "logo": "Assets/logo.png"
   },
