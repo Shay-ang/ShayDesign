@@ -7,22 +7,446 @@
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
-      "heroTitleSize": 75,
-      "heroTitleWeight": 400,
+      "heroTitleSize": 55,
+      "heroTitleWeight": 300,
       "heroPaddingTop": 60,
       "heroPaddingBottom": 68,
       "heroSubtitleSize": 13,
       "projectTitleSize": 80,
-      "heroTitleColor": "#fcfcfc",
-      "projectTitleWeight": 500
+      "projectTitleWeight": 300,
+      "fontFamily": "Heebo",
+      "homeTileGap": 10,
+      "homeTileRowHeight": 308,
+      "homeTilePadding": 0,
+      "homeTileRadius": 48,
+      "homeTileShadow": 0,
+      "homeTileBg": "#fafafa"
     }
   },
   "clients": [
     {
+      "id": "bpm",
+      "name": "BPM College",
+      "category": "Education for the music Industry",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 60,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/BPM/bpm_guidetest3.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/BPM/bpm_guide_mobile.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/ableton_post2022.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/BPM/ableton_story2022.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/×××¨_×××¦×¨_2022.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/BPM/×××¨_×××¦×¨_×¡×××¨×_2022.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/34db3aeb-7b1f-48e2-b603-5537bdc07fc6_rw_3840.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/BPM/Free_Poster_Frame_Mockup_1.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/Poster_Frame_Mockup.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/Poster_Frame_on_the_Wall_Mockup_1.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/Poster_Frame_Mockup_2.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/BPM LOGO.gif",
+          "type": "gif",
+          "cols": 2
+        },
+        {
+          "file": "Assets/BPM/bpm19_reel.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/2022_3.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/BPM+ ONLINE ADI4.jpg",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/mix&master_postv4.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/gaming_post16_REEL.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/BPM/×¤××¡×_×§×¨××× ××ª_11.png",
+          "type": "image"
+        }
+      ],
+      "logoSize": 128,
+      "logo": "Assets/BPM/logo.png",
+      "logoDark": "Assets/BPM/logo-dark.png"
+    },
+    {
+      "id": "my-farmer",
+      "name": "האיכר שלי",
+      "category": "Social Media Reels & Posts Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/האיכר שלי/myfarmer_eggs_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/myfarmer_eggs_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/האיכר שלי/2××©××× ××× × ×¤××¡× × ××¡×£.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/2××©××× ××× × ×¡×××¨× × ××¡×£.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/האיכר שלי/150_free_delivery_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/150_free_delivery_story.png",
+          "type": "image"
+        }
+      ],
+      "logo": "Assets/האיכר שלי/logo.png",
+      "logoSize": 185
+    },
+    {
+      "id": "ninja-academy",
+      "name": "Ninja Academy",
+      "category": "Social Media Reels & Posts Design Logo Motion Design Google Ads Banners & Website Banners Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/Ninja Academy/site cover 30 ×¡××£ ×©× ×.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Ninja Academy/30.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/Ninja Academy/story30.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Ninja Academy/ninjalogoanimation1200.gif",
+          "type": "gif",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Ninja Academy/30 5.png",
+          "type": "image",
+          "cols": 2
+        }
+      ],
+      "logoDark": "Assets/Ninja Academy/logo-dark.png",
+      "logo": "Assets/Ninja Academy/logo.jpg",
+      "logoSize": 188
+    },
+    {
+      "id": "tiltan",
+      "name": "Tiltan Design School",
+      "category": "Social Media Reels & Posts Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/Tiltan ∙ Design School/start_new_game_post3.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/start_new_game_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/70 ××©×¨××ª.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× 70 ××©×¨××ª.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/FIX24_××©×× ×××ª×× ×ª××.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× ××©×× ×××ª×× ×ª××_fix24.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¢××¦×× ××× ×¤××¡×.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¢××¦×× ××× ×¡×××¨×.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/spacefromspace_post4.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/spacefromspace_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/futuredesign_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/futuredesign_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×ª×§×©××¨×ª ××××ª××ª.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× ×ª×§×©××¨×ª ××××ª××ª.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¤××¡× ××©××§× ×××©×.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× ××©××§× ×××©×.png",
+          "type": "image"
+        }
+      ],
+      "logo": "Assets/Tiltan ∙ Design School/logo.png",
+      "logoSize": 500
+    },
+    {
+      "id": "reefer",
+      "name": "Reefer",
+      "category": "Social Media Reels & Posts Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/Reefer/atidot_reefer5.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/Reefer/atidot_reefer5_story_reel.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Reefer/organize_toughts.png",
+          "type": "image",
+          "rowRatio": 65
+        },
+        {
+          "file": "Assets/Reefer/organize_toughts_story_reel.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Reefer/stop_post.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/Reefer/stop_story_reel.png",
+          "type": "image"
+        }
+      ],
+      "logo": "Assets/Reefer/logo.png",
+      "logoSize": 500
+    },
+    {
+      "id": "new-credit",
+      "name": "New Credit",
+      "category": "Social Media Reels, Posts & Motion Design Google Ads Banners",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/New Credit/× ×××§×¨×××_×¤××¡×_×¤××¨××_××¨×××¦××2.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/New Credit/× ×××§×¨×××_×¡×××¨×_×¤××¨××_××¨×××¦××2.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/New_credit_tktok_1080_1080.mp4",
+          "type": "video",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/New Credit/New_credit_tktok_1080_1920.mp4",
+          "type": "video"
+        },
+        {
+          "file": "Assets/New Credit/suppliers_negative.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/New Credit/suppliers_negative_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/NEW CREDIT LOGO ANIMATION REEL.mp4",
+          "type": "video",
+          "cols": 2
+        },
+        {
+          "file": "Assets/New Credit/××× ×§ ××¡×¤×§×× ×××××× ×××ª× ×¤××¡×.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/New Credit/××× ×§ ××¡×¤×§×× ×××××× ×××ª× ×¡×××¨×.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/×××××¨× ××©×× ×ª×.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/didyouknow.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/newcredit_passover8_reel.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/×¤××¡× ××©× × ××××©×.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/creditgrade_post.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/New Credit/newcredit_passover_version2_Reel.png",
+          "type": "image"
+        }
+      ],
+      "logo": "Assets/New Credit/logo.png",
+      "logoDark": "Assets/New Credit/logo-dark.png",
+      "logoSize": 500
+    },
+    {
       "id": "animal-care",
       "name": "Animal Care",
-      "category": "Social Media",
-      "tileSize": "large",
+      "category": "Social Media Posts Design",
+      "tileSize": "normal",
       "logoSize": 500,
       "grid": {
         "columns": 2,
@@ -84,414 +508,14 @@
           "file": "Assets/Animal Care/f0c65ef48c0646728ae00000ecd26f51rw1200.png",
           "type": "image"
         }
-      ]
-    },
-    {
-      "id": "bpm",
-      "name": "BPM",
-      "category": "Education for the music Industry",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 60,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/BPM/bpm19_reel.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/2022_3.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/bpm_guidetest3.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/bpm_guide_mobile.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/ableton_post2022.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/ableton_story2022.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/OLPANA_reel.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/mix&master_postv4.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/×××¨_×××¦×¨_2022.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/×××¨_×××¦×¨_×¡×××¨×_2022.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/34db3aeb-7b1f-48e2-b603-5537bdc07fc6_rw_3840.png",
-          "type": "image",
-          "cols": 2
-        },
-        {
-          "file": "Assets/BPM/Poster_Frame_on_the_Wall_Mockup_1.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/Poster_Frame_Mockup.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/Free_Poster_Frame_Mockup_1.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/Poster_Frame_Mockup_2.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/BPM+ ONLINE ADI4.jpg",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/BPM+ ONLINE HAGAI.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/PA_Post_static.jpg",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/gaming_post16_REEL.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/BPM/BPM LOGO.gif",
-          "type": "gif",
-          "cols": 2
-        }
       ],
-      "logoSize": 500,
-      "logo": "Assets/BPM/logo.png",
-      "logoDark": "Assets/BPM/logo-dark.png"
-    },
-    {
-      "id": "new-credit",
-      "name": "New Credit",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/New Credit/××× ×§ ××¡×¤×§×× ×××××× ×××ª× ×¤××¡×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/××× ×§ ××¡×¤×§×× ×××××× ×××ª× ×¡×××¨×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/newcredit_facebook.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/DARK_KICK_reel_STORY.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/× ×××§×¨×××_×¤××¡×_×¤××¨××_××¨×××¦××2.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/× ×××§×¨×××_×¡×××¨×_×¤××¨××_××¨×××¦××2.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/suppliers_negative.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/suppliers_negative_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/×××××¨× ××©×× ×ª×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/didyouknow.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/×¤××¡× ××©× × ××××©×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/creditgrade_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/newcredit_passover8_reel.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/newcredit_passover_version2_Reel.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/New Credit/NEW CREDIT LOGO ANIMATION REEL.mp4",
-          "type": "video",
-          "cols": 2
-        },
-        {
-          "file": "Assets/New Credit/New_credit_tktok_1080_1080.mp4",
-          "type": "video"
-        },
-        {
-          "file": "Assets/New Credit/New_credit_tktok_1080_1920.mp4",
-          "type": "video"
-        }
-      ],
-      "logo": "Assets/New Credit/logo.png",
-      "logoDark": "Assets/New Credit/logo-dark.png",
-      "logoSize": 500
-    },
-    {
-      "id": "ninja-academy",
-      "name": "Ninja Academy",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/Ninja Academy/30% 5.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Ninja Academy/30% ×× ×¨×©××× ×¢× ×¡××£ ××©× ×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Ninja Academy/site cover 30 ×¡××£ ×©× ×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Ninja Academy/story 30% ×× ×¨×©××× ×¢× ×¡××£ ××©× ×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Ninja Academy/logo breakdown.mp4",
-          "type": "video",
-          "cols": 2
-        }
-      ],
-      "logoDark": "Assets/Ninja Academy/logo-dark.png",
-      "logo": "Assets/Ninja Academy/logo.png",
-      "logoSize": 500
-    },
-    {
-      "id": "reefer",
-      "name": "Reefer",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/Reefer/atidot_reefer5.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Reefer/atidot_reefer5_story_reel.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Reefer/organize_toughts.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Reefer/organize_toughts_story_reel.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Reefer/stop_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Reefer/stop_story_reel.png",
-          "type": "image"
-        }
-      ],
-      "logo": "Assets/Reefer/logo.png",
-      "logoSize": 500
-    },
-    {
-      "id": "tiltan",
-      "name": "Tiltan ∙ Design School",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/Tiltan ∙ Design School/start_new_game_post3.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/start_new_game_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/70 ××©×¨××ª.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× 70 ××©×¨××ª.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/FIX24_××©×× ×××ª×× ×ª××.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× ××©×× ×××ª×× ×ª××_fix24.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¢××¦×× ××× ×¤××¡×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¢××¦×× ××× ×¡×××¨×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/spacefromspace_post4.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/spacefromspace_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/futuredesign_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/futuredesign_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×ª×§×©××¨×ª ××××ª××ª.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× ×ª×§×©××¨×ª ××××ª××ª.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¤××¡× ××©××§× ×××©×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Tiltan ∙ Design School/×¡×××¨× ××©××§× ×××©×.png",
-          "type": "image"
-        }
-      ],
-      "logo": "Assets/Tiltan/logo.png",
-      "logoSize": 500
-    },
-    {
-      "id": "",
-      "name": "S",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": []
-    },
-    {
-      "id": "-",
-      "name": "האחים פינחסי",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 3,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/האחים פינחסי/×¦×¤×× ××××ª×.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האחים פינחסי/100% ×©×××¢××ª ×¨×¦××.png",
-          "type": "image"
-        }
-      ],
-      "logo": "Assets/האחים פינחסי/logo.png",
-      "logoSize": 500
+      "logo": "Assets/Animal Care/logo.png"
     },
     {
       "id": "mental--digital-agency",
       "name": "Mental ∙ Digital Agency",
       "category": "",
-      "tileSize": "large",
+      "tileSize": "normal",
       "grid": {
         "columns": 2,
         "gap": 20,
@@ -543,14 +567,14 @@
       "logoSize": 500
     },
     {
-      "id": "mybox",
-      "name": "Mybox",
-      "category": "",
-      "tileSize": "large",
+      "id": "-",
+      "name": "האחים פינחסי",
+      "category": "Social Media Reels & Posts Google Ads Banners & Print Graphic Design",
+      "tileSize": "normal",
       "grid": {
-        "columns": 2,
+        "columns": 4,
         "gap": 20,
-        "width": 80,
+        "width": 65,
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
@@ -558,141 +582,68 @@
       },
       "assets": [
         {
-          "file": "Assets/Mybox/mybox_2022_m_post.png",
+          "file": "Assets/האחים פינחסי/×¦×¤×× ××××ª×.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/100 ×©×××¢××ª ×¨×¦××.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/250_250.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/200_200.png",
+          "type": "image",
+          "rowRatio": 46,
+          "cols": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/336_280.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/120_600.png",
+          "type": "image",
+          "rows": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/160_600.png",
+          "type": "image",
+          "rows": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/300_250.png",
+          "type": "image",
+          "cols": 2,
+          "rows": 2
+        },
+        {
+          "file": "Assets/האחים פינחסי/468_60.png",
           "type": "image"
         },
         {
-          "file": "Assets/Mybox/mybox_2022_m_story.png",
+          "file": "Assets/האחים פינחסי/728_90.jpg",
           "type": "image"
         },
         {
-          "file": "Assets/Mybox/mybox_2022_w_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mybox/mybox_2022_w_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mybox/mybox_2022_post_2.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mybox/post_110223_mobile2.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mybox/post_110223_woman.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mybox/mobile_110223_woman.png",
-          "type": "image"
-        }
-      ],
-      "logoDark": "Assets/Mybox/logo-dark.png",
-      "logo": "Assets/Mybox/logo.png"
-    },
-    {
-      "id": "my-farmer",
-      "name": "האיכר שלי",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/האיכר שלי/myfarmer_eggs_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/myfarmer_eggs_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/2××©××× ××× × ×¤××¡× × ××¡×£.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/2××©××× ××× × ×¡×××¨× × ××¡×£.png",
+          "file": "Assets/האחים פינחסי/728_90.png",
           "type": "image"
         }
       ],
-      "logo": "Assets/My farmer/logo.png",
-      "logoSize": 252
-    },
-    {
-      "id": "s",
-      "name": "מכללת לפיד",
-      "category": "",
-      "tileSize": "large",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0
-      },
-      "assets": [
-        {
-          "file": "Assets/מכללת לפיד/cnc1_post.mp4",
-          "type": "video"
-        },
-        {
-          "file": "Assets/מכללת לפיד/cnc1_story.mp4",
-          "type": "video"
-        },
-        {
-          "file": "Assets/מכללת לפיד/cnc_post.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/מכללת לפיד/cnc_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/מכללת לפיד/×× ×××ª_××©××× ××ª_post.mp4",
-          "type": "video"
-        },
-        {
-          "file": "Assets/מכללת לפיד/×× ×××ª_××©××× ××ª_story.mp4",
-          "type": "video"
-        },
-        {
-          "file": "Assets/מכללת לפיד/× ××××_××××_××¨××©_×¤××¡×.mp4",
-          "type": "video"
-        },
-        {
-          "file": "Assets/מכללת לפיד/× ××××_××××_××¨××©_×¡×××¨×.mp4",
-          "type": "video"
-        }
-      ],
-      "logoDark": "Assets/מכללת לפיד/logo-dark.png",
-      "logo": "Assets/מכללת לפיד/logo.png",
-      "logoSize": 500
+      "logo": "Assets/האחים פינחסי/logo.png",
+      "logoSize": 176
     },
     {
       "id": "sawt--music-academy",
-      "name": "SAWT ∙ Music Academy",
-      "category": "",
-      "tileSize": "large",
+      "name": "SAWT Music Academy",
+      "category": "Motion Design Posts for Social Media & Logo Animations",
+      "tileSize": "normal",
       "grid": {
         "columns": 2,
         "gap": 20,
@@ -721,7 +672,157 @@
         }
       ],
       "logoDark": "Assets/SAWT ∙ Music Academy/logo-dark.png",
+      "logoSize": 128,
+      "logo": "Assets/SAWT ∙ Music Academy/logo.png"
+    },
+    {
+      "id": "mybox",
+      "name": "Mybox",
+      "category": "",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/Mybox/mybox_2022_m_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Mybox/mybox_2022_m_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mybox/mybox_2022_w_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Mybox/mybox_2022_w_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mybox/mybox_2022_post_2.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Mybox/post_110223_mobile2.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mybox/post_110223_woman.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/Mybox/mobile_110223_woman.png",
+          "type": "image"
+        }
+      ],
+      "logoDark": "Assets/Mybox/logo-dark.png",
+      "logo": "Assets/Mybox/logo.webp",
+      "logoSize": 216
+    },
+    {
+      "id": "s",
+      "name": "מכללת לפיד",
+      "category": "Social Media Reels & Posts Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/מכללת לפיד/cnc1_post.mp4",
+          "type": "video",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/מכללת לפיד/cnc1_story.mp4",
+          "type": "video"
+        },
+        {
+          "file": "Assets/מכללת לפיד/×× ×××ª_××©××× ××ª_post.mp4",
+          "type": "video",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/מכללת לפיד/×× ×××ª_××©××× ××ª_story.mp4",
+          "type": "video"
+        },
+        {
+          "file": "Assets/מכללת לפיד/× ××××_××××_××¨××©_×¤××¡×.mp4",
+          "type": "video",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/מכללת לפיד/× ××××_××××_××¨××©_×¡×××¨×.mp4",
+          "type": "video"
+        },
+        {
+          "file": "Assets/מכללת לפיד/cnc_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/מכללת לפיד/cnc_story.png",
+          "type": "image"
+        }
+      ],
+      "logoDark": "Assets/מכללת לפיד/logo-dark.png",
+      "logo": "Assets/מכללת לפיד/logo.png",
       "logoSize": 500
+    },
+    {
+      "id": "dvri",
+      "name": "דברי שיר",
+      "category": "Social Media Reels & Posts Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0
+      },
+      "assets": [
+        {
+          "file": "Assets/DVRI/500×©×§× ×¤××¡×.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/DVRI/500×©×§× ×¡×××¨×.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/DVRI/2××××© ×©×××¢ ××¡×¤×¨ ××ª××× ×.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/DVRI/×¡×××¨× ××××© ×©×××¢ ××¡×¤×¨ ××ª××× ×.png",
+          "type": "image"
+        }
+      ],
+      "logo": "Assets/DVRI/logo.png",
+      "logoSize": 100
     }
   ]
 }
