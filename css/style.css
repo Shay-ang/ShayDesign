@@ -132,16 +132,16 @@ main#app { flex: 1; }
   gap: var(--gap);
 }
 
-/* Home page: 4-column grid with shorter rows */
+/* Home page: configurable column grid */
 .bento-home {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--home-cols, 4), 1fr);
   grid-auto-rows: var(--home-tile-row-h, 160px);
   gap: var(--home-tile-gap, var(--gap));
 }
 
-/* Home tile size overrides for 4-col grid */
+/* Home tile size overrides */
 .bento-home .bento-item[data-size="featured"] { grid-column: span 3; }
-.bento-home .bento-item[data-size="hero"]     { grid-column: span 4; }
+.bento-home .bento-item[data-size="hero"]     { grid-column: 1 / -1; }
 
 /* Size variants — set via  data-size="…"  in config.js */
 /*
@@ -576,11 +576,10 @@ html::-webkit-scrollbar-thumb:hover { background: #b4b4b4; }
   .bento-item[data-size="large"]   { grid-column: span 2; }
   .bento-item[data-size="wide"]    { grid-column: span 2; }
 
-  /* Home bento: 2-column grid so large/featured tiles fill each row */
-  .bento-home { grid-template-columns: repeat(2, 1fr); }
-  .bento-home .bento-item[data-size="large"],
+  /* Home bento: configurable tablet columns */
+  .bento-home { grid-template-columns: repeat(var(--home-cols-tablet, 2), 1fr); }
   .bento-home .bento-item[data-size="featured"],
-  .bento-home .bento-item[data-size="hero"]    { grid-column: span 2; }
+  .bento-home .bento-item[data-size="hero"]    { grid-column: 1 / -1; }
 
 }
 
@@ -597,6 +596,11 @@ html::-webkit-scrollbar-thumb:hover { background: #b4b4b4; }
   .bento-item[data-size="large"],
   .bento-item[data-size="featured"],
   .bento-item[data-size="hero"]  { grid-column: span 2; }
+
+  /* Home bento: configurable mobile columns */
+  .bento-home { grid-template-columns: repeat(var(--home-cols-mobile, 2), 1fr); }
+  .bento-home .bento-item[data-size="featured"],
+  .bento-home .bento-item[data-size="hero"]    { grid-column: 1 / -1; }
 
   .client-page-header { gap: 0.5rem; }
 

@@ -178,6 +178,10 @@
     // Hero title visibility
     if (s.heroTitleHidden)  r.style.setProperty('--hero-title-display', 'none');
     else                    r.style.removeProperty('--hero-title-display');
+    // Home grid columns per breakpoint
+    set('--home-cols',        s.homeColsDesktop != null ? String(s.homeColsDesktop) : null, '');
+    set('--home-cols-tablet', s.homeColsTablet  != null ? String(s.homeColsTablet)  : null, '');
+    set('--home-cols-mobile', s.homeColsMobile  != null ? String(s.homeColsMobile)  : null, '');
     // Home tile styles
     set('--home-tile-gap',     s.homeTileGap,       'px');
     set('--home-tile-row-h',   s.homeTileRowHeight, 'px');

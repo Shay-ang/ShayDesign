@@ -28,12 +28,13 @@
       "projectTitleSizeMobile": 35,
       "projectTitleSizeTablet": 65,
       "socialIconSize": 25,
-      "backBtnSize": 10
+      "backBtnSize": 10,
+      "homeColsMobile": 1
     },
-    "logo": "Assets/logo.png",
     "meta": {
       "description": "Graphic & Video Design"
-    }
+    },
+    "logo": "Assets/logo.png"
   },
   "clients": [
     {
@@ -140,117 +141,6 @@
       "logoDark": "Assets/BPM/logo-dark.png"
     },
     {
-      "id": "my-farmer",
-      "name": "האיכר שלי",
-      "category": "Social Media Reels & Posts Design",
-      "tileSize": "normal",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0,
-        "mobile": {
-          "paddingTop": 10
-        },
-        "tablet": {
-          "paddingTop": 25
-        }
-      },
-      "assets": [
-        {
-          "file": "Assets/האיכר שלי/myfarmer_eggs_post.png",
-          "type": "image",
-          "rowRatio": 64.1
-        },
-        {
-          "file": "Assets/האיכר שלי/myfarmer_eggs_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_post.png",
-          "type": "image",
-          "rowRatio": 64.1
-        },
-        {
-          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_story.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/2××©××× ××× × ×¤××¡× × ××¡×£.png",
-          "type": "image",
-          "rowRatio": 64.1
-        },
-        {
-          "file": "Assets/האיכר שלי/2××©××× ××× × ×¡×××¨× × ××¡×£.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/האיכר שלי/150_free_delivery_post.png",
-          "type": "image",
-          "rowRatio": 64.1
-        },
-        {
-          "file": "Assets/האיכר שלי/150_free_delivery_story.png",
-          "type": "image"
-        }
-      ],
-      "logo": "Assets/האיכר שלי/logo.png",
-      "logoSize": 185
-    },
-    {
-      "id": "ninja-academy",
-      "name": "Ninja Academy",
-      "category": "Social Media Posts & Reels • Logo Design • Motion Design • Google Ads & Website Banner Design",
-      "tileSize": "normal",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0,
-        "mobile": {
-          "paddingTop": 10
-        },
-        "tablet": {
-          "paddingTop": 25
-        }
-      },
-      "assets": [
-        {
-          "file": "Assets/Ninja Academy/site cover 30 ×¡××£ ×©× ×.png",
-          "type": "image",
-          "cols": 2
-        },
-        {
-          "file": "Assets/Ninja Academy/30.png",
-          "type": "image",
-          "rowRatio": 64
-        },
-        {
-          "file": "Assets/Ninja Academy/story30.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Ninja Academy/ninjalogoanimation1200.gif",
-          "type": "gif",
-          "cols": 2
-        },
-        {
-          "file": "Assets/Ninja Academy/30 5.png",
-          "type": "image",
-          "cols": 2
-        }
-      ],
-      "logoDark": "Assets/Ninja Academy/logo-dark.png",
-      "logo": "Assets/Ninja Academy/logo.jpg",
-      "logoSize": 188
-    },
-    {
       "id": "tiltan",
       "name": "Tiltan Design School",
       "category": "Social Media Reels & Posts Design",
@@ -347,6 +237,117 @@
       ],
       "logo": "Assets/Tiltan ∙ Design School/logo.png",
       "logoSize": 500
+    },
+    {
+      "id": "ninja-academy",
+      "name": "Ninja Academy",
+      "category": "Social Media Posts & Reels • Logo Design • Motion Design • Google Ads & Website Banner Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
+      },
+      "assets": [
+        {
+          "file": "Assets/Ninja Academy/site cover 30 ×¡××£ ×©× ×.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Ninja Academy/30.png",
+          "type": "image",
+          "rowRatio": 64
+        },
+        {
+          "file": "Assets/Ninja Academy/story30.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Ninja Academy/ninjalogoanimation1200.gif",
+          "type": "gif",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Ninja Academy/30 5.png",
+          "type": "image",
+          "cols": 2
+        }
+      ],
+      "logoDark": "Assets/Ninja Academy/logo-dark.png",
+      "logo": "Assets/Ninja Academy/logo.jpg",
+      "logoSize": 188
+    },
+    {
+      "id": "my-farmer",
+      "name": "האיכר שלי",
+      "category": "Social Media Reels & Posts Design",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
+      },
+      "assets": [
+        {
+          "file": "Assets/האיכר שלי/myfarmer_eggs_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/myfarmer_eggs_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/×××©××¨×_×××_×ª××××_story.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/האיכר שלי/2××©××× ××× × ×¤××¡× × ××¡×£.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/2××©××× ××× × ×¡×××¨× × ××¡×£.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/האיכר שלי/150_free_delivery_post.png",
+          "type": "image",
+          "rowRatio": 64.1
+        },
+        {
+          "file": "Assets/האיכר שלי/150_free_delivery_story.png",
+          "type": "image"
+        }
+      ],
+      "logo": "Assets/האיכר שלי/logo.png",
+      "logoSize": 185
     },
     {
       "id": "reefer",
@@ -492,6 +493,67 @@
       "logoSize": 500
     },
     {
+      "id": "mental--digital-agency",
+      "name": "Mental ∙ Digital Agency",
+      "category": "In-house Graphic designer, Video Editor & Motion Artist",
+      "tileSize": "normal",
+      "grid": {
+        "columns": 2,
+        "gap": 20,
+        "width": 80,
+        "maxWidth": 0,
+        "paddingTop": 40,
+        "paddingBottom": 0,
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
+      },
+      "assets": [
+        {
+          "file": "Assets/Mental ∙ Digital Agency/1.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/2.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/3.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/4.png",
+          "type": "image"
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/×¤×¨×¡×× ×©××××ª ×¢×××.png",
+          "type": "image",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/mentalwhitebg.mp4",
+          "type": "video",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/Mental_Digital_agency_post.mp4",
+          "type": "video",
+          "cols": 2
+        },
+        {
+          "file": "Assets/Mental ∙ Digital Agency/INTRO.mp4",
+          "type": "video",
+          "cols": 2
+        }
+      ],
+      "logo": "Assets/Mental ∙ Digital Agency/logo.png",
+      "logoSize": 500
+    },
+    {
       "id": "animal-care",
       "name": "Animal Care",
       "category": "Social Media Posts Design",
@@ -561,67 +623,6 @@
         }
       ],
       "logo": "Assets/Animal Care/logo.png"
-    },
-    {
-      "id": "mental--digital-agency",
-      "name": "Mental ∙ Digital Agency",
-      "category": "In-house Graphic designer, Video Editor & Motion Artist",
-      "tileSize": "normal",
-      "grid": {
-        "columns": 2,
-        "gap": 20,
-        "width": 80,
-        "maxWidth": 0,
-        "paddingTop": 40,
-        "paddingBottom": 0,
-        "rowHeight": 0,
-        "mobile": {
-          "paddingTop": 10
-        },
-        "tablet": {
-          "paddingTop": 25
-        }
-      },
-      "assets": [
-        {
-          "file": "Assets/Mental ∙ Digital Agency/1.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/2.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/3.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/4.png",
-          "type": "image"
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/×¤×¨×¡×× ×©××××ª ×¢×××.png",
-          "type": "image",
-          "cols": 2
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/mentalwhitebg.mp4",
-          "type": "video",
-          "cols": 2
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/Mental_Digital_agency_post.mp4",
-          "type": "video",
-          "cols": 2
-        },
-        {
-          "file": "Assets/Mental ∙ Digital Agency/INTRO.mp4",
-          "type": "video",
-          "cols": 2
-        }
-      ],
-      "logo": "Assets/Mental ∙ Digital Agency/logo.png",
-      "logoSize": 500
     },
     {
       "id": "-",
