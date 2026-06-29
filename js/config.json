@@ -7,7 +7,7 @@
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
-      "heroTitleSize": 55,
+      "heroTitleSize": 45,
       "heroTitleWeight": 300,
       "heroPaddingTop": 60,
       "heroPaddingBottom": 68,
@@ -20,8 +20,14 @@
       "homeTilePadding": 0,
       "homeTileRadius": 48,
       "homeTileShadow": 0,
-      "homeTileBg": "#fafafa"
-    }
+      "homeTileBg": "#fafafa",
+      "navLogoGap": 0,
+      "navTextSize": 15,
+      "navTextColor": "#010101",
+      "navTextWeight": 400,
+      "projectTitleSizeMobile": 30
+    },
+    "logo": "Assets/logo.png"
   },
   "clients": [
     {

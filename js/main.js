@@ -10,6 +10,7 @@
   var SOCIAL_ICONS = {
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>',
     linkedin:  '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
+    mail:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>',
     behance:   '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.58 1.662 1.573 1.662.671 0 1.148-.238 1.368-.607H23v.974zM15.998 13h3.796c-.104-1.196-.71-1.81-1.86-1.81-1.12 0-1.797.628-1.936 1.81zM8.221 11.717c1.492-.326 2.145-1.3 2.145-2.655 0-2.078-1.567-3.062-3.516-3.062H2v12h4.857c2.2 0 4.07-1.08 4.07-3.378 0-1.494-.667-2.595-2.706-2.905zM5.5 8.5H7c.667 0 1.2.3 1.2 1 0 .7-.567 1-1.2 1H5.5V8.5zm1.667 6H5.5v-2.25h1.667C8 12.25 8.5 12.75 8.5 13.5s-.5 1-1.333 1z"/></svg>',
   };
 
@@ -159,9 +160,20 @@
     set('--hero-pt',             s.heroPaddingTop,    'px');
     set('--hero-pb',             s.heroPaddingBottom, 'px');
     set('--proj-title-size',        s.projectTitleSize,        'px');
+    set('--proj-title-size-tablet', s.projectTitleSizeTablet,  'px');
     set('--proj-title-size-mobile', s.projectTitleSizeMobile,  'px');
     set('--proj-title-weight',      s.projectTitleWeight != null ? String(s.projectTitleWeight) : null, '');
     set('--proj-title-color',       s.projectTitleColor, '');
+    // Nav logo gap + text styling
+    set('--nav-logo-gap',    s.navLogoGap,    'px');
+    set('--nav-text-size',   s.navTextSize,   'px');
+    set('--nav-text-weight', s.navTextWeight != null ? String(s.navTextWeight) : null, '');
+    set('--nav-text-color',  s.navTextColor,  '');
+    if (s.navTextHidden)    r.style.setProperty('--nav-text-display',   'none');
+    else                    r.style.removeProperty('--nav-text-display');
+    // Hero title visibility
+    if (s.heroTitleHidden)  r.style.setProperty('--hero-title-display', 'none');
+    else                    r.style.removeProperty('--hero-title-display');
     // Home tile styles
     set('--home-tile-gap',     s.homeTileGap,       'px');
     set('--home-tile-row-h',   s.homeTileRowHeight, 'px');
@@ -188,7 +200,7 @@
 
     var navLogo = document.getElementById('nav-logo');
     if (d.logo) {
-      navLogo.innerHTML = '<img src="' + escAttr(d.logo) + '" alt="' + escAttr(d.name) + '" class="nav-logo-img">';
+      navLogo.innerHTML = '<img src="' + escAttr(d.logo) + '" alt="" class="nav-logo-img"><span class="nav-logo-text">' + esc(d.name) + '</span>';
     } else {
       navLogo.textContent = d.name;
     }
@@ -202,15 +214,10 @@
         links += '<a href="' + escAttr(url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + key + '" class="social-link">' + SOCIAL_ICONS[key] + '</a>';
       }
     });
-    document.getElementById('footer-social').innerHTML = links;
-
-    var emailEl = document.getElementById('footer-email');
     if (d.email) {
-      emailEl.innerHTML = '<a href="mailto:' + escAttr(d.email) + '">' + esc(d.email) + '</a>';
-      emailEl.style.display = '';
-    } else {
-      emailEl.style.display = 'none';
+      links += '<a href="mailto:' + escAttr(d.email) + '" aria-label="email" class="social-link">' + SOCIAL_ICONS.mail + '</a>';
     }
+    document.getElementById('footer-social').innerHTML = links;
   }
 
   // ── Breadcrumb ────────────────────────────────────────────────────────────
@@ -585,7 +592,11 @@
       if (CONFIG) { CONFIG.designer.name = msg.name; CONFIG.designer.tagline = msg.tagline; }
       document.title = msg.name;
       var navLogoEl = document.getElementById('nav-logo');
-      if (navLogoEl && !navLogoEl.querySelector('img')) navLogoEl.textContent = msg.name;
+      if (navLogoEl) {
+        var navTextSpan = navLogoEl.querySelector('.nav-logo-text');
+        if (navTextSpan) navTextSpan.textContent = msg.name;
+        else if (!navLogoEl.querySelector('img')) navLogoEl.textContent = msg.name;
+      }
       var footerNameEl = document.getElementById('footer-name');
       if (footerNameEl) footerNameEl.textContent = msg.name;
       var heroH1 = app && app.querySelector('.hero h1');
