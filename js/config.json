@@ -30,7 +30,10 @@
       "socialIconSize": 25,
       "backBtnSize": 10
     },
-    "logo": "Assets/logo.png"
+    "logo": "Assets/logo.png",
+    "meta": {
+      "description": "Graphic & Video Design"
+    }
   },
   "clients": [
     {
