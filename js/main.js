@@ -166,6 +166,8 @@
     set('--proj-title-color',       s.projectTitleColor, '');
     // Social icon size
     set('--social-icon-size', s.socialIconSize, 'px');
+    // Back button size
+    set('--back-btn-size', s.backBtnSize, 'px');
     // Nav logo gap + text styling
     set('--nav-logo-gap',    s.navLogoGap,    'px');
     set('--nav-text-size',   s.navTextSize,   'px');

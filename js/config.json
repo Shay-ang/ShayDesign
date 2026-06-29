@@ -26,8 +26,9 @@
       "navTextColor": "#010101",
       "navTextWeight": 400,
       "projectTitleSizeMobile": 35,
-      "projectTitleSizeTablet": 70,
-      "socialIconSize": 25
+      "projectTitleSizeTablet": 65,
+      "socialIconSize": 25,
+      "backBtnSize": 10
     },
     "logo": "Assets/logo.png"
   },
@@ -47,6 +48,9 @@
         "rowHeight": 0,
         "mobile": {
           "paddingTop": 0
+        },
+        "tablet": {
+          "paddingTop": 25
         }
       },
       "assets": [
@@ -144,7 +148,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -199,7 +209,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -243,7 +259,14 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10,
+          "paddingBottom": 0
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -334,7 +357,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -380,7 +409,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -469,11 +504,13 @@
         "rowHeight": 520,
         "tablet": {
           "columns": 1,
-          "rowHeight": 0
+          "rowHeight": 0,
+          "paddingTop": 25
         },
         "mobile": {
           "columns": 1,
-          "rowHeight": 240
+          "rowHeight": 240,
+          "paddingTop": 10
         }
       },
       "assets": [
@@ -525,7 +562,7 @@
     {
       "id": "mental--digital-agency",
       "name": "Mental ∙ Digital Agency",
-      "category": "",
+      "category": "In-house Graphic designer, Video Editor & Motion Artist",
       "tileSize": "normal",
       "grid": {
         "columns": 2,
@@ -534,7 +571,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -589,7 +632,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -662,7 +711,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -689,7 +744,7 @@
     {
       "id": "mybox",
       "name": "Mybox",
-      "category": "",
+      "category": "Social Media Reels & Posts Design",
       "tileSize": "normal",
       "grid": {
         "columns": 2,
@@ -698,7 +753,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -754,7 +815,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {
@@ -810,7 +877,13 @@
         "maxWidth": 0,
         "paddingTop": 40,
         "paddingBottom": 0,
-        "rowHeight": 0
+        "rowHeight": 0,
+        "mobile": {
+          "paddingTop": 10
+        },
+        "tablet": {
+          "paddingTop": 25
+        }
       },
       "assets": [
         {

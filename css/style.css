@@ -274,7 +274,7 @@ main#app { flex: 1; }
 
 .back-btn {
   align-self: flex-start;
-  font-size: 0.85rem;
+  font-size: var(--back-btn-size, 0.85rem);
   color: var(--text-muted);
   text-decoration: none;
   display: inline-flex;
