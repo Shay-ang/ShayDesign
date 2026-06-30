@@ -157,8 +157,18 @@
     set('--hero-title-color',    s.heroTitleColor,    '');
     set('--hero-subtitle-size',  s.heroSubtitleSize,  'px');
     set('--hero-subtitle-color', s.heroSubtitleColor, '');
-    set('--hero-pt',             s.heroPaddingTop,    'px');
-    set('--hero-pb',             s.heroPaddingBottom, 'px');
+    set('--hero-pt',             s.heroPaddingTop,           'px');
+    set('--hero-pb',             s.heroPaddingBottom,        'px');
+    set('--hero-pt-tablet',      s.heroPaddingTopTablet,     'px');
+    set('--hero-pb-tablet',      s.heroPaddingBottomTablet,  'px');
+    set('--hero-pt-mobile',      s.heroPaddingTopMobile,     'px');
+    set('--hero-pb-mobile',      s.heroPaddingBottomMobile,  'px');
+    set('--hero-section-desc-size',    s.heroSectionDescSize,    'px');
+    set('--hero-section-desc-weight',  s.heroSectionDescWeight  != null ? String(s.heroSectionDescWeight)  : null, '');
+    set('--hero-disclaimer-size',      s.heroDisclaimerSize,     'px');
+    set('--hero-disclaimer-weight',    s.heroDisclaimerWeight   != null ? String(s.heroDisclaimerWeight)   : null, '');
+    set('--hero-pre-mb',               s.heroPreMarginBottom,    'px');
+    set('--hero-disclaimer-mt',        s.heroDisclaimerMarginTop,'px');
     set('--proj-title-size',        s.projectTitleSize,        'px');
     set('--proj-title-size-tablet', s.projectTitleSizeTablet,  'px');
     set('--proj-title-size-mobile', s.projectTitleSizeMobile,  'px');
@@ -350,10 +360,15 @@
       heroIdent = '<h1>' + esc(CONFIG.designer.name) + '</h1>';
     }
 
+    var d = CONFIG.designer;
+    var heroPre = d.heroSectionDesc
+      ? '<div class="hero-pre"><p class="hero-section-desc">' + esc(d.heroSectionDesc) + '</p></div>'
+      : '';
     app.innerHTML = (
       '<header class="hero page-enter">' +
         heroIdent +
-        '<p>'  + esc(CONFIG.designer.tagline || '') + '</p>' +
+        heroPre +
+        (d.tagline ? '<p class="hero-disclaimer">' + esc(d.tagline) + '</p>' : '') +
       '</header>' +
       '<section class="page-section">' +
         '<div class="container">' +
@@ -690,7 +705,12 @@
     }
 
     if (msg.type === 'hero-text-update') {
-      if (CONFIG) { CONFIG.designer.name = msg.name; CONFIG.designer.tagline = msg.tagline; }
+      if (CONFIG) {
+        CONFIG.designer.name    = msg.name;
+        CONFIG.designer.tagline = msg.tagline;
+        if (msg.heroSectionDesc  != null) CONFIG.designer.heroSectionDesc  = msg.heroSectionDesc;
+
+      }
       document.title = msg.name;
       var navLogoEl = document.getElementById('nav-logo');
       if (navLogoEl) {
@@ -700,8 +720,10 @@
       }
       var heroH1 = app && app.querySelector('.hero h1');
       if (heroH1) heroH1.textContent = msg.name;
-      var heroP = app && app.querySelector('.hero p');
-      if (heroP) heroP.textContent = msg.tagline || '';
+      var heroDescEl = app && app.querySelector('.hero-section-desc');
+      if (heroDescEl) heroDescEl.textContent = msg.heroSectionDesc != null ? msg.heroSectionDesc : (heroDescEl.textContent);
+      var heroDisclaimerEl = app && app.querySelector('.hero-disclaimer');
+      if (heroDisclaimerEl) heroDisclaimerEl.textContent = msg.tagline || '';
       return;
     }
 
