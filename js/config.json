@@ -1,45 +1,53 @@
 {
   "designer": {
     "name": "Shay Design",
-    "tagline": "Graphic & Print Design | Video Editing | Motion Design",
+    "tagline": "Social media visuals, reels, posts, banners and motion assets created for existing brands.",
+    "heroSectionDesc": "Graphic & Print Design | Video Editing | Motion Design",
     "email": "ohanshay@gmail.com",
     "social": {
       "instagram": "https://www.instagram.com/shay_oh/"
     },
     "styles": {
-      "heroLogoSize": 200,
-      "heroTitleSize": 50,
+      "heroLogoSize": 180,
+      "heroTitleSize": 41,
       "heroTitleWeight": 300,
-      "heroPaddingTop": 40,
-      "heroPaddingBottom": 30,
-      "heroSubtitleSize": 17,
+      "heroPaddingTop": 0,
+      "heroPaddingBottom": 25,
+      "heroSubtitleSize": 20,
       "projectTitleSize": 70,
       "projectTitleWeight": 300,
       "fontFamily": "Heebo",
       "homeTileGap": 10,
       "homeTileRowHeight": 308,
-      "homeTilePadding": 0,
+      "homeTilePadding": 4,
       "homeTileRadius": 48,
       "homeTileShadow": 0,
       "homeTileBg": "#fafafa",
       "navLogoGap": 5,
-      "navTextSize": 10,
+      "navTextSize": 11,
       "navTextColor": "#010101",
       "navTextWeight": 400,
       "projectTitleSizeMobile": 35,
       "projectTitleSizeTablet": 55,
-      "socialIconSize": 25,
+      "socialIconSize": 20,
       "backBtnSize": 10,
       "homeColsMobile": 1,
       "navHeightMobile": 56,
-      "navHeightTablet": 56
+      "navHeightTablet": 56,
+      "heroSectionDescSize": 15,
+      "heroDisclaimerMarginTop": 8,
+      "heroPaddingTopTablet": 40,
+      "heroPaddingTopMobile": 52,
+      "heroPaddingBottomTablet": 35,
+      "heroPaddingBottomMobile": 30
     },
     "meta": {
       "description": "Graphic & Print Design | Video Editing | Motion Design",
       "title": "Shay Design",
       "image": "https://shay.design/Assets/share.png"
     },
-    "logo": "Assets/logo.png"
+    "logo": "Assets/logo.png",
+    "heroLogoAsTitle": true
   },
   "clients": [
     {
